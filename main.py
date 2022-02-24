@@ -1,8 +1,4 @@
-"""
-API with 3 endpoints.
-Run `uvicorn main:app` and go to 127.0.0.1:8000 in the browser.
-Docs: http://127.0.0.1:8000/docs
-"""
+"""API with 3 endpoints. See docs for details."""
 from fastapi import FastAPI
 
 app = FastAPI()
