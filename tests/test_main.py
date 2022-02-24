@@ -1,5 +1,4 @@
-#  python -m pytest
-
+"""Test all API endpoints - run `python -m pytest`."""
 from fastapi.testclient import TestClient
 
 from main import app
@@ -26,6 +25,8 @@ def test_add_two_numbers_type_error():
     assert response.status_code == 422
 
 
-
-
-
+def test_join_strings():
+    response = client.get("/joinstrings/?first_str=pink&second_str=elephant")
+    assert response.status_code == 200
+    result = response.json().get("output", "")
+    assert result == "pink-elephant"
